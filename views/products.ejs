@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .product-card {
+            background: #fafafa;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .product-img {
+            width: 100%;
+            max-width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .product-title {
+            font-size: 1.2em;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .product-price {
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .product-desc {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 16px;
+        }
+        .buy-btn {
+            background: #27ae60;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.2s;
+        }
+        .buy-btn:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Products</h1>
+        <!-- first require to login -->
+        <% if (!users) { %>
+            <p>Please <a href="/login">login</a> to view products.</p>
+        <% return; %>
+        <% } %>
+        <!-- Display products -->   
+        <% if (products.length === 0) { %>
+            <p>No products available at the moment.</p>
+        <% return; %>
+        <% } %>
+        
+        <div class="products-grid">
+            <!-- Example products, replace with dynamic EJS code as needed -->
+            <div class="product-card">
+                <img src="<%= product.image%>" alt="Product 1" class="product-img">
+                <div class="product-title"><%=product.name%></div>
+                <div class="product-price"><%= product.price %></div>
+                <div class="product-desc"><%= product.description%></div>
+                <button class="buy-btn">Buy Now</button>
+                    <a href="/">⬅ Back to Home</a>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source</title>
+</head>
+<body>
+    <div class="blog">
+    <h1>This is what my website is all about </h1>
+    <ul>
+    <h3>Blogging Business </h3>
+    <p>top Bloggs</p>
+
+
+    <% if (locals.business[0]){ %>
+        <% business[0].forEach(function(item) { %>
+            <li><%= item %></li>
+        <% }); %>
+    
+
+    <% } %>
+
+    </ul>
+    </div>
+
+    <div class="product">
+    <ul>
+    <h3>Blogging Business </h3>
+    <p>top products</p>
+
+    <% if (locals.business[1]){ %>
+        <% business[1].forEach(function(item) { %>
+            <li><%= item %></li>
+        <% }); %>
+
+    <% } %>
+
+    </ul>
+    </div>
+
+    <footer>copyright &copy; 2025</footer>
+
+</body>
+</html>

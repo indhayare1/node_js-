@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My EJS Example Page</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    
+
+<h1>All Products</h1>
+<ul>
+    <% products.forEach(product => { %>
+        <li>
+            <img src="<%= product.image %>" width="100" />
+            <strong><%= product.name %></strong> - $<%= product.price %> <br/>
+            <a href="/products/<%= product.ID %>">View Details</a>
+        </li>
+    <% }) %>
+</ul>
+
+<form action="/search" method="GET">
+    <input type="text" name="name" placeholder="Search product by name">
+    <button type="submit">Search</button>
+</form>
+
+
+    </ul>
+</body>
+</html>

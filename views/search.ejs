@@ -1,0 +1,17 @@
+<h1>Search Results for "<%= query %>"</h1>
+
+<% if (result.length > 0) { %>
+    <ul>
+    <% result.forEach(product => { %>
+        <li>
+            <img src="<%= product.image %>" width="80" />
+            <strong><%= product.name %></strong>
+            <a href="/products/<%= product.ID %>">View</a>
+        </li>
+    <% }) %>
+    </ul>
+<% } else { %>
+    <p>No products found.</p>
+<% } %>
+
+<a href="/">⬅ Back to Home</a>

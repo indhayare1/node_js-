@@ -1,0 +1,20 @@
+{
+  "name": "my-capstone-project",
+  "version": "1.0.0",
+  "description": "i'm feeling to post this project to github that i did't learn how to push it on github steel so i'm just letting my self to make this project ready while i'm learning about github or taking github course the is what i'm about now.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node_js-"
+  },
+  "author": "abdalla boss",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
