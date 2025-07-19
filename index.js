@@ -169,6 +169,5 @@ app.post('/check',login,(req,res)=>{
 app.get('/login', (req, res) => {
     res.render("login", { users });
 });
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+
+export default app;
