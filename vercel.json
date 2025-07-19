@@ -1,15 +1,18 @@
-        {
-          "version": 2,
-          "builds": [
-            {
-              "src": "api/index.js", // Path to your main server file
-              "use": "@vercel/node"
-            }
-          ],
-          "routes": [
-            {
-              "src": "/(.*)",
-              "dest": "/api" // Redirects all requests to your serverless function
-            }
-          ]
-        }
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "buildCommand": "npm run custom-build-script"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api"
+    }
+  ]
+}
