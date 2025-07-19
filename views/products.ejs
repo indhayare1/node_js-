@@ -80,16 +80,7 @@
 <body>
     <div class="container">
         <h1>Our Products</h1>
-        <!-- first require to login -->
-        <% if (!users) { %>
-            <p>Please <a href="/login">login</a> to view products.</p>
-        <% return; %>
-        <% } %>
-        <!-- Display products -->   
-        <% if (products.length === 0) { %>
-            <p>No products available at the moment.</p>
-        <% return; %>
-        <% } %>
+
         
         <div class="products-grid">
             <!-- Example products, replace with dynamic EJS code as needed -->
