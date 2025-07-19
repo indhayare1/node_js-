@@ -1,12 +1,12 @@
 {
   "name": "my-capstone-project",
   "version": "1.0.0",
-  "description": "i'm feeling to post this project to github that i did't learn how to push it on github steel so i'm just letting my self to make this project ready while i'm learning about github or taking github course the is what i'm about now.",
+  "description": "I'm feeling to post this project to GitHub. I haven't learned how to push it on GitHub yet, so I'm just letting myself prepare this project while learning or taking a GitHub course. This is what I'm about now.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "start": "node index.js"
-},
+    "start": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "node_js-"
