@@ -110,7 +110,7 @@ let users = {
 
 // ✅ Home page - List all products
 app.get("/", (req, res) => {
-    res.render("index", { products ,login });
+    res.render("indexA", { products ,login });
 });
 
 // ✅ Product details by ID
