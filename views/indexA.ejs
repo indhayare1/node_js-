@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Welcome</title>
+    <style>
+        body {
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 70px 20px 30px;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.card h1 {
+  font-size: 1.8rem;
+  color: #00b09b;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.whatsapp-button {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.t-button {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a7bd8;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.whatsapp-button img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.t-button img {
+  width: 20px;
+  margin-right: 8px;
+}
+.whatsapp-button:hover {
+  background-color: #1ebe5b;
+}
+
+.t-button:hover {
+  background-color: #0a719a;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 15px;
+}
+
+    </style>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="image-wrapper">
+          <img src="/styles/tm.jpg" alt="Welcome Image" />
+        </div>
+        <h1>Welcome!</h1>
+        <p>𝗚𝗮𝗰𝗺𝗼 𝗳𝘂𝗿𝗮𝗻 👏🏻</p>
+        <a href="https://wa.me/252628397213" target="_blank" class="whatsapp-button">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />
+          Chat on WhatsApp
+        </a>
+                <a href="https://t.me/abdalla77star" target="_blank" class="t-button">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" alt="Telegram" />
+          Chat on WhatsApp
+        </a>
+        <p class="note">We care about your privacy👏🏻</p>
+      </div>
+    </div>
+  </body>
+</html>
