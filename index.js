@@ -112,7 +112,7 @@ let users = {
 app.get("/", (req, res) => {
     res.render("indexA", { products ,login });
 });
-app.get("/pp", (req, res) => {
+app.get("/privacy-policy", (req, res) => {
    res.render("PP")
 });
 
