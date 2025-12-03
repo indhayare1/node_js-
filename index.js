@@ -113,7 +113,7 @@ app.get("/", (req, res) => {
     res.render("indexA", { products ,login });
 });
 app.get("/privacy-policy", (req, res) => {
-   res.sendFile("privacy-policy-forWhats-api.html
+   res.sendFile("privacy-policy-forWhats-api.html")
 });
 
 // ✅ Product details by ID
