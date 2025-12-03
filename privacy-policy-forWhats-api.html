@@ -1,0 +1,82 @@
+# Writing the updated privacy policy HTML file with the user's requested email address
+html_content = """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy — API for Whats</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 24px; color: #111; }
+    header { border-bottom: 1px solid #ddd; padding-bottom: 12px; margin-bottom: 18px;}
+    h1 { font-size: 1.6rem; margin: 0 0 6px 0; }
+    h2 { font-size: 1.1rem; margin-top: 18px; }
+    p { margin: 8px 0; }
+    .note { background:#f9f9f9; padding:10px; border-left:4px solid #e0e0e0; }
+    a { color: #0645AD; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { margin-top: 28px; font-size: 0.9rem; color: #444; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Privacy Policy for API for Whats.com</h1>
+    <p><strong>Effective Date:</strong> 21st January, 2025</p>
+  </header>
+
+  <section>
+    <h2>Introduction</h2>
+    <p>This privacy policy (the “Policy”) sets out the privacy policies and practices for API for Whats and its subsidiaries and affiliates (collectively, “we”, “us”, “our”) with respect to how we collect personal information. It also describes how we maintain, use, and disclose personal information.</p>
+  </section>
+
+  <section>
+    <h2>Information We Collect</h2>
+    <p>We collect and store information that you voluntarily provide to us as well as data related to your website visit and usage. We collect personally identifiable information (including, but not limited to, name, address and phone number) that is voluntarily provided to us by you. For example, you voluntarily provide personally identifiable information when you send us an email, use certain features of the website like the contact us form, or register with our site. In addition, during your visit we automatically collect certain aggregate information related to your website visit. Aggregate information is non-personally identifiable or anonymous information about you, including the date and time of your visit, your IP address, your computer browser information, the Internet address that you visited prior to and after reaching our site, the name of the domain and host you used to access the Internet, and the features of our site which you accessed.</p>
+  </section>
+
+  <section>
+    <h2>Use of Information</h2>
+    <p>We use this information in order to serve the needs of our customers. We may use your information to meet your requests for our products, programs, and services, to respond to your inquiries about our offerings, to offer you other products or services that we believe may be of interest to you, to enforce the legal terms that govern your use of our site, and/or for the purposes for which you provided the information.</p>
+  </section>
+
+  <section>
+    <h2>Information Sharing and Disclosure</h2>
+    <p>API for Whats does not sell or rent your personally identifiable information to anyone. We only disclose personally identifiable information about our users when we believe, in good faith, that either the law requires it, to protect the rights or property of API for Whats or we must to provide you with the services or products you requested.</p>
+  </section>
+
+  <section>
+    <h2>Cookies</h2>
+    <p>We may use cookies to manage our users’ sessions and to store preferences, tracking information, and language selection. Cookies may be used whether you register with us or not.</p>
+  </section>
+
+  <section>
+    <h2>Security</h2>
+    <p>We employ reasonable and current security methods to prevent unauthorized access, maintain data accuracy, and ensure correct use of information.</p>
+  </section>
+
+  <section>
+    <h2>Your Ability to Edit and Delete Your Account Information and Preferences</h2>
+    <p>You may request deletion of your email address by sending an e-mail to <a href="mailto:cllahiindhayare213@gmail.com">cllahiindhayare213@gmail.com</a>. However, please note that your identification, billing and contact information will remain on our records for some period.</p>
+  </section>
+
+  <section>
+    <h2>Privacy Policy Updates</h2>
+    <p>We may update this policy from time to time. If we make significant changes, we will notify you of the changes through our website or through other means, such as email.</p>
+  </section>
+
+  <section>
+    <h2>How to Contact Us</h2>
+    <p>If you have any questions about this privacy policy, please contact us at <a href="mailto:cllahiindhayare213@gmail.com">cllahiindhayare213@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    <p>API for Whats — Effective Date: 21st January, 2025</p>
+  </footer>
+</body>
+</html>
+"""
+
+file_path = "/mnt/data/privacy_policy_api_for_whats.html"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+file_path
