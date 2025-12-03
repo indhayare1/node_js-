@@ -112,8 +112,8 @@ let users = {
 app.get("/", (req, res) => {
     res.render("indexA", { products ,login });
 });
-app.get("/privacy-policy", (req, res) => {
-   res.sendFile("privacy-policy-forWhats-api.html")
+app.get("/PP", (req, res) => {
+   res.render("privacy-policy-forWhats-api.html")
 });
 
 // ✅ Product details by ID
