@@ -115,7 +115,7 @@ app.get("/k", (req, res) => {
     res.render("indexA", { products});
 });
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("indexA");
 });
 
 // ✅ Product details by ID
