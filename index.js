@@ -29,6 +29,19 @@ function IDgeneratorr() {
 }
 console.log(IDgeneratorr());
 
+let login = (req,res,next)=>{
+    let user = req.body.username;
+    let pass = req.body.password;
+
+    if(users[user] && users[user].password === pass){
+        console.log("Login successful for user:", user);
+        next();
+    } else {
+        console.log("Login failed for user:", user);
+        res.status(401).send("Invalid username or password");
+    }
+};
+
 
 let products = [
     {
