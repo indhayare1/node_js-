@@ -115,7 +115,7 @@ app.get("/", (req, res) => {
     res.render("indexA", { products});
 });
 app.get("/privacy", (req, res) => {
-  res.render("PP");
+  res.render("index");
 });
 
 // ✅ Product details by ID
