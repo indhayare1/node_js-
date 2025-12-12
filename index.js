@@ -111,11 +111,11 @@ let users = {
 
 
 // ✅ Home page - List all products
-app.get("/k", (req, res) => {
+app.get("/wa", (req, res) => {
     res.render("indexA", { products});
 });
 app.get("/", (req, res) => {
-  res.render("indexA");
+  res.render("PP");
 });
 
 // ✅ Product details by ID
