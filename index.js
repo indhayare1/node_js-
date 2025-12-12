@@ -112,8 +112,8 @@ let users = {
 app.get("/", (req, res) => {
     res.render("indexA", { products ,login });
 });
-app.get("/pp", (req, res) => {
-   res.render("PP")
+app.get("/privacy", (req, res) => {
+  res.render("PP");
 });
 
 // ✅ Product details by ID
