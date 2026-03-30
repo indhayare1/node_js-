@@ -34,7 +34,6 @@ body {
   position: relative;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  z-index: 10;
 }
 
 .image-wrapper {
@@ -112,13 +111,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Reserve height for pop animation on mobile */
   min-height: 132px;
   min-width: 75px;
-  position: relative;
 }
 
 .balloon-wrap {
   display: flex;
+  /* Controls column or row layout based on screen */
   flex-direction: row;
   gap: 24px;
 }
@@ -150,7 +150,7 @@ body {
 
 .balloon::after {
   content: '';
-  position: absolute;
+  position: fixed;
   left: 50%;
   bottom: -18px;
   transform: translateX(-50%);
@@ -189,33 +189,25 @@ body {
 }
 
 /* --- Responsive Layout --- */
-.balloons-area.left,
-.balloons-area.right {
-  display: flex;
-}
-.balloons-area.bottom {
-  display: none;
-}
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
   }
-  .balloons-area.left,
-  .balloons-area.right {
-    display: none !important;
+  .balloons-area {
+    flex-direction: row;
+    margin-bottom: 8px;
+    min-height: 90px;
   }
-  .balloons-area.bottom {
-    display: flex !important;
+  .balloon-wrap {
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    gap: 30px;
   }
   .card {
     margin-top: 12px;
-    margin-bottom: 0;
+    margin-bottom: 12px;
   }
 }
 
@@ -254,20 +246,11 @@ body {
 .balloon-box:not(:hover) .pop-message:not(.show) {
   display: none;
 }
+
     </style>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Left balloon (desktop only) -->
-      <div class="balloons-area left">
-        <div class="balloon-wrap">
-          <div class="balloon-box">
-            <div class="balloon" id="balloon1"></div>
-            <div class="pop-message" id="popMsg1">POP!</div>
-          </div>
-        </div>
-      </div>
 
       <div class="card">
         <div class="image-wrapper">
@@ -286,32 +269,13 @@ body {
         <p class="note">We care about your privacy👏🏻</p>
       </div>
 
-      <!-- Right balloon (desktop only) -->
-      <div class="balloons-area right">
-        <div class="balloon-wrap">
-          <div class="balloon-box">
-            <div class="balloon right" id="balloon2"></div>
-            <div class="pop-message" id="popMsg2">POP!</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Bottom balloon (mobile only) -->
-    <div class="balloons-area bottom">
-      <div class="balloon-wrap">
-        <div class="balloon-box">
-          <div class="balloon" id="balloonMobile"></div>
-          <div class="pop-message" id="popMsgMobile">POP!</div>
-        </div>
-      </div>
     </div>
 
     <script>
       function setupBalloon(balloonId, popMsgId) {
         const balloon = document.getElementById(balloonId);
         const popMsg = document.getElementById(popMsgId);
-        if (!balloon || !popMsg) return;
 
         function popBalloon() {
           balloon.style.visibility = 'hidden';
@@ -326,11 +290,8 @@ body {
         balloon.addEventListener('click', popBalloon);
         balloon.addEventListener('touchstart', popBalloon);
       }
-      // Desktop balloons
       setupBalloon('balloon1', 'popMsg1');
       setupBalloon('balloon2', 'popMsg2');
-      // Mobile balloon
-      setupBalloon('balloonMobile', 'popMsgMobile');
     </script>
   </body>
 </html>
