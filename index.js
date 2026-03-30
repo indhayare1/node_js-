@@ -111,10 +111,10 @@ let users = {
 
 
 // ✅ Home page - List all products
-app.get("/wa", (req, res) => {
+app.get("/", (req, res) => {
     res.render("indexA", { products});
 });
-app.get("/", (req, res) => {
+app.get("/wpp", (req, res) => {
   res.render("PP");
 });
 
