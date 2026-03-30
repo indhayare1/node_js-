@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Welcome</title>
     <style>
-        body {
+body {
   margin: 0;
   padding: 0;
   background: #f1f1f1;
@@ -15,12 +15,14 @@
   justify-content: center;
   min-height: 100vh;
 }
-
 .container {
   width: 100%;
   padding: 20px;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .card {
@@ -64,51 +66,37 @@
   color: #333;
 }
 
+.whatsapp-button, .t-button {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+  color: white;
+}
+
 .whatsapp-button {
-  margin-top: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.t-button {
-  margin-top: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0a7bd8;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.whatsapp-button img {
-  width: 20px;
-  margin-right: 8px;
-}
-
-.t-button img {
-  width: 20px;
-  margin-right: 8px;
 }
 .whatsapp-button:hover {
   background-color: #1ebe5b;
 }
 
+.t-button {
+  background-color: #0a7bd8;
+}
 .t-button:hover {
   background-color: #0a719a;
+}
+
+.whatsapp-button img, .t-button img {
+  width: 20px;
+  margin-right: 8px;
 }
 
 .note {
@@ -117,11 +105,164 @@
   margin-top: 15px;
 }
 
+/* --- Balloon Styles --- */
+.balloons-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Reserve height for pop animation on mobile */
+  min-height: 132px;
+  min-width: 75px;
+}
+
+.balloon-wrap {
+  display: flex;
+  /* Controls column or row layout based on screen */
+  flex-direction: row;
+  gap: 24px;
+}
+
+.balloon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 85px;
+  min-height: 125px;
+  position: relative;
+}
+.balloon {
+  position: relative;
+  width: 65px;
+  height: 90px;
+  background: radial-gradient(circle at 40% 30%, #ffeb6b 85%, #efc320 100%);
+  border-radius: 50% 50% 48% 48% / 60% 60% 60% 60%;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+  transition: transform 0.1s;
+  cursor: pointer;
+  animation: float 2s ease-in-out infinite alternate;
+  z-index: 1;
+}
+.balloon.right {
+  background: radial-gradient(circle at 60% 25%, #D5C3FF 85%, #825CEC 100%);
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 20px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #ffd740 0%, #efa600 100%);
+  z-index: 0;
+}
+.balloon.right::after {
+  background: linear-gradient(to bottom, #bfb6fa 0%, #825cec 100%);
+}
+@keyframes float {
+  to { transform: translateY(-12px);}
+}
+
+.pop-message {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #e74c3c;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin-top: 10px;
+  min-height: 1.1em;
+  pointer-events: none;
+  user-select: none;
+}
+.pop-message.show {
+  opacity: 1;
+  animation: pop-effect 0.5s;
+}
+@keyframes pop-effect {
+  0% { transform: scale(2); opacity: 0.2;}
+  75% { transform: scale(1); opacity: 1;}
+  100% { transform: scale(1); opacity: 1;}
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .balloons-area {
+    flex-direction: row;
+    margin-bottom: 8px;
+    min-height: 90px;
+  }
+  .balloon-wrap {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+  .card {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 601px) {
+  .container {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .balloons-area {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    margin-right: 0;
+  }
+  .balloon-wrap {
+    flex-direction: column;
+    gap: 120px;
+    height: 100%;
+    justify-content: space-between;
+    min-width: 65px;
+  }
+  /* Balloons left/right of card */
+  .balloons-area.left {
+    margin-right: 12px;
+    align-items: flex-end;
+  }
+  .balloons-area.right {
+    margin-left: 12px;
+    align-items: flex-start;
+  }
+}
+
+/* Hide empty pop message boxes so they don't create space below balloon */
+.balloon-box:not(:hover) .pop-message:not(.show) {
+  display: none;
+}
+
     </style>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+
     <div class="container">
+      <!-- Left balloon on desktop, top balloon on mobile -->
+      <div class="balloons-area left">
+        <div class="balloon-wrap">
+          <div class="balloon-box">
+            <div class="balloon" id="balloon1"></div>
+            <div class="pop-message" id="popMsg1">POP!</div>
+          </div>
+        </div>
+      </div>
+
       <div class="card">
         <div class="image-wrapper">
           <img src="https://raw.githubusercontent.com/indhayare1/node_js-/refs/heads/main/360_F_1495659623_FP2ivpeVIVsJWMePiX6YwyWk0krobYE2-removebg-preview.png" alt="Welcome Image" />
@@ -132,12 +273,44 @@
           <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />
           Chat on WhatsApp
         </a>
-                <a href="https://t.me/abdalla77star" target="_blank" class="t-button">
+        <a href="https://t.me/abdalla77star" target="_blank" class="t-button">
           <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" alt="Telegram" />
-          Chat on WhatsApp
+          Chat on Telegram
         </a>
         <p class="note">We care about your privacy👏🏻</p>
       </div>
+
+      <!-- Right balloon on desktop, top balloon on mobile -->
+      <div class="balloons-area right">
+        <div class="balloon-wrap">
+          <div class="balloon-box">
+            <div class="balloon right" id="balloon2"></div>
+            <div class="pop-message" id="popMsg2">POP!</div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <script>
+      function setupBalloon(balloonId, popMsgId) {
+        const balloon = document.getElementById(balloonId);
+        const popMsg = document.getElementById(popMsgId);
+
+        function popBalloon() {
+          balloon.style.visibility = 'hidden';
+          popMsg.classList.add('show');
+          setTimeout(() => {
+            popMsg.classList.remove('show');
+            setTimeout(() => {
+              balloon.style.visibility = '';
+            }, 700);
+          }, 700);
+        }
+        balloon.addEventListener('click', popBalloon);
+        balloon.addEventListener('touchstart', popBalloon);
+      }
+      setupBalloon('balloon1', 'popMsg1');
+      setupBalloon('balloon2', 'popMsg2');
+    </script>
   </body>
 </html>
