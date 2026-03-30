@@ -252,17 +252,6 @@ body {
   </head>
   <body>
 
-    <div class="container">
-      <!-- Left balloon on desktop, top balloon on mobile -->
-      <div class="balloons-area left">
-        <div class="balloon-wrap">
-          <div class="balloon-box">
-            <div class="balloon" id="balloon1"></div>
-            <div class="pop-message" id="popMsg1">POP!</div>
-          </div>
-        </div>
-      </div>
-
       <div class="card">
         <div class="image-wrapper">
           <img src="https://raw.githubusercontent.com/indhayare1/node_js-/refs/heads/main/360_F_1495659623_FP2ivpeVIVsJWMePiX6YwyWk0krobYE2-removebg-preview.png" alt="Welcome Image" />
@@ -279,6 +268,17 @@ body {
         </a>
         <p class="note">We care about your privacy👏🏻</p>
       </div>
+
+      <!-- Right balloon on desktop, top balloon on mobile -->
+      <div class="balloons-area right">
+        <div class="balloon-wrap">
+          <div class="balloon-box">
+            <div class="balloon right" id="balloon2"></div>
+            <div class="pop-message" id="popMsg2">POP!</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       function setupBalloon(balloonId, popMsgId) {
