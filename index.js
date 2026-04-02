@@ -135,6 +135,11 @@ app.get("/products/:id", (req, res) => {
 //     const result = products.filter(p => p.name.toLowerCase().includes(name?.toLowerCase()));
 //     res.render("search", { result, query: name });
 // });
+
+app.get('/images/avatar/avatar.png', (req, res) => {
+  res.redirect('https://raw.githubusercontent.com/indhayare1/node_js-/refs/heads/main/360_F_1495659623_FP2ivpeVIVsJWMePiX6YwyWk0krobYE2-removebg-preview.png');
+});
+
 app.get("/search", (req, res) => {
     const { name } = req.query;
     const result = products.filter(p => p.name.toLowerCase().includes(name?.toLowerCase()));
