@@ -1,1 +1,111 @@
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 70px 20px 30px;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.card h1 {
+  font-size: 1.8rem;
+  color: #00b09b;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.whatsapp-button, .t-button, .email-button {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+  color: white;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+}
+.email-button {
+  background-color: #ea4335;
+}
+.whatsapp-button:hover {
+  background-color: #1ebe5b;
+}
+
+.t-button {
+  background-color: #0a7bd8;
+}
+.t-button:hover {
+  background-color: #0a719a;
+}
+
+.whatsapp-button img, .t-button img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 15px;
+}
+
+.email-button:hover {
+  background-color: #b73723;
+}
+.email-button img {
+  width: 20px;
+  margin-right: 8px;
+}
